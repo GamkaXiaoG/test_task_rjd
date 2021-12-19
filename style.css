@@ -1,21 +1,34 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: content-box;
   font-family: "Geometria";
   font-weight: 400;
+}
+
+body {
+  box-sizing: content-box;
 }
 
 .container {
   width: 1200px;
   margin: 0 auto;
 }
+@media (max-width: 700px) {
+  .container {
+    width: 700px;
+    margin: 0 auto;
+  }
+}
 
 header {
-  max-height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 700px) {
+  header {
+    min-height: 90px;
+  }
 }
 header .index_logo {
   display: flex;
@@ -24,18 +37,48 @@ header .index_logo {
 header .index_logo .index_logo_text {
   padding-left: 10px;
 }
+header .index_logo .index_logo_text span {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23px;
+}
+header .index_logo .index_logo_text p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 17px;
+}
 header .index_nav {
   list-style: none;
-  width: 540px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  text-transform: uppercase;
+}
+@media (max-width: 700px) {
+  header .index_nav {
+    display: none;
+  }
+}
+header .index_nav li {
+  padding: 37px 17px 37px 18px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+header .index_nav li:nth-child(4) {
+  color: #4169C1;
+}
+header .index_nav li:hover {
+  background-color: #4169C1;
+  color: #fff;
 }
 header .index_telephone {
   display: flex;
-  align-items: 50% 20px;
 }
 header .index_telephone img {
   padding-right: 10px;
+}
+header .index_telephone h2 {
+  font-size: 22px;
+  font-weight: 500;
 }
 
 .bg_wrapper {
@@ -44,41 +87,71 @@ header .index_telephone img {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+@media (max-width: 700px) {
+  .bg_wrapper {
+    background-size: cover;
+  }
+}
 .bg_wrapper .bg_wrapper_services_info {
   color: white;
-  width: 846px;
   text-align: center;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .bg_wrapper .bg_wrapper_services_info h1 {
   font-size: 44px;
   line-height: 55px;
+  font-weight: 700;
   margin-bottom: 10px;
+  max-width: 308px;
+}
+@media (max-width: 700px) {
+  .bg_wrapper .bg_wrapper_services_info h1 {
+    font-size: 38px;
+    max-width: 578px;
+  }
 }
 .bg_wrapper .bg_wrapper_services_info p {
-  width: 585px;
   text-align: center;
   font-size: 18px;
-  padding-left: 130px;
+  line-height: 28px;
+  font-weight: 400;
+  max-width: 585px;
+}
+@media (max-width: 700px) {
+  .bg_wrapper .bg_wrapper_services_info p {
+    max-width: 460px;
+  }
 }
 .bg_wrapper .bg_wrapper_application_info {
   background-image: url(/png/Rectangle\ 153.png);
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  align-self: center;
-  width: 1200px;
-  min-height: 202px;
   margin-top: 39px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
+@media (max-width: 700px) {
+  .bg_wrapper .bg_wrapper_application_info {
+    background-size: cover;
+    padding: 38px 60px 53px 58px;
+    width: 500px;
+  }
+}
 .bg_wrapper .bg_wrapper_application_info p {
-  padding: 34px 0px 25px 73px;
-  font-weight: 500px;
   font-size: 22px;
+  font-weight: 500 !important;
+}
+@media (max-width: 700px) {
+  .bg_wrapper .bg_wrapper_application_info p {
+    max-width: 300px;
+  }
 }
 .bg_wrapper .bg_wrapper_application_info p span {
   color: #4169c1;
+  font-weight: 500 !important;
 }
 .bg_wrapper .bg_wrapper_application_info .name {
   display: block;
@@ -86,10 +159,20 @@ header .index_telephone img {
   height: 45px;
   margin-right: 20px;
 }
+@media (max-width: 700px) {
+  .bg_wrapper .bg_wrapper_application_info .name {
+    width: 100%;
+  }
+}
 .bg_wrapper .bg_wrapper_application_info .email {
   display: block;
   width: 235px;
   height: 45px;
+}
+@media (max-width: 700px) {
+  .bg_wrapper .bg_wrapper_application_info .email {
+    width: 100%;
+  }
 }
 .bg_wrapper .bg_wrapper_application_info .telephone {
   display: block;
@@ -97,21 +180,54 @@ header .index_telephone img {
   height: 45px;
   margin-right: 20px;
 }
+@media (max-width: 700px) {
+  .bg_wrapper .bg_wrapper_application_info .telephone {
+    width: 100%;
+  }
+}
 
 .form_flex {
-  padding-left: 73px;
   display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+@media (max-width: 700px) {
+  .form_flex {
+    flex-direction: column;
+  }
+}
+@media (max-width: 700px) {
+  .form_flex label {
+    margin-top: 10px;
+  }
 }
 .form_flex button {
   width: 235px;
-  height: 50px;
+  height: 46px;
   align-self: end;
   border-radius: 23px;
   margin-left: 31px;
+  background-color: #FD6612;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+}
+@media (max-width: 700px) {
+  .form_flex button {
+    width: 100%;
+    margin-top: 16px;
+  }
+}
+.form_flex input[type=text] {
+  padding-left: 15px;
+  box-sizing: border-box;
 }
 
 .bg_wrapper .container {
-  padding-top: 109px;
+  padding-top: 76px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -121,9 +237,34 @@ header .index_telephone img {
 .geography_work_info {
   display: flex;
   align-items: center;
+  margin-bottom: 60px;
+}
+@media (max-width: 700px) {
+  .geography_work_info {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media (max-width: 700px) {
+  .geography_work_info .geography_work_text {
+    width: 570px;
+  }
+}
+.geography_work_info .geography_work_text h2 {
+  font-weight: 500;
+  font-size: 35px;
+  padding-bottom: 20px;
+}
+.geography_work_info .geography_work_text .geography_work_text_ooo {
+  font-size: 22px;
+  line-height: 33px;
+  padding-right: 25px;
+  margin-bottom: 20px;
 }
 .geography_work_info .geography_work_text .geography_work_text_about {
   word-break: break-word;
+  font-size: 16px;
+  line-height: 25px;
 }
 .geography_work_info .russia_country {
   width: 724px;
@@ -136,12 +277,20 @@ header .index_telephone img {
 .wrapper_portfolio .container {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding-bottom: 51px;
+}
+@media (max-width: 700px) {
+  .wrapper_portfolio .container {
+    flex-direction: column;
+  }
 }
 .wrapper_portfolio h2 {
   text-align: center;
   padding-top: 70px;
   padding-bottom: 38px;
+  font-size: 35px;
+  font-weight: 500;
 }
 .wrapper_portfolio .our_portfolio_image img {
   display: block;
@@ -165,28 +314,43 @@ header .index_telephone img {
   text-transform: uppercase;
   border: none;
   margin-top: 29px;
+  letter-spacing: 0.04em;
 }
 .our_portfolio_content_wrapper .our_portfolio_content_repair h3 {
   margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 500;
 }
 .our_portfolio_content_wrapper .our_portfolio_content_repair p {
   margin-bottom: 29px;
   width: 480px;
   word-break: break-word;
   line-height: 25px;
+  color: rgba(255, 255, 255, 0.7);
 }
 .our_portfolio_content_wrapper .our_portfolio_content_works p {
   margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 500;
 }
 .our_portfolio_content_wrapper .our_portfolio_content_works_catalog {
   display: flex;
   flex-wrap: wrap;
 }
 .our_portfolio_content_wrapper .our_portfolio_content_works_catalog li {
-  width: 250px;
+  width: 268px;
   list-style: none;
   margin-right: 57px;
   margin-bottom: 17px;
+}
+.our_portfolio_content_wrapper .our_portfolio_content_works_catalog li::before {
+  content: "";
+  display: inline-block;
+  background-image: url(/svg/Check.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 24px;
+  height: 14px;
 }
 
 .catalog_features_list {
@@ -207,6 +371,22 @@ header .index_telephone img {
   margin-bottom: 20px;
   line-height: 21px;
   font-size: 14px;
+  position: relative;
+}
+@media (min-width: 700px) {
+  .catalog_features_list .catalog_features_item {
+    width: 268px;
+  }
+}
+.catalog_features_list .catalog_features_item::before {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 9px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(65, 105, 193, 0.2);
+  border-radius: 50%;
 }
 .catalog_features_list .catalog_features_item strong {
   font-size: 22px;
@@ -217,11 +397,12 @@ header .index_telephone img {
 }
 .catalog_features_list .catalog_features_item p {
   padding-right: 40px;
+  line-height: 21px;
 }
 .catalog_features_list .item1 {
   background-image: url(/svg/Money.svg);
   background-repeat: no-repeat;
-  background-position: 0 -10px;
+  background-position: 0 -1px;
 }
 .catalog_features_list .item2 {
   background-image: url(/svg/Lightbulb.svg);
@@ -248,6 +429,11 @@ header .index_telephone img {
   background-color: #F4F8FF;
   padding-left: 136px;
 }
+@media (min-width: 700px) {
+  .about_company_wrapper {
+    padding: 0;
+  }
+}
 .about_company_wrapper .container {
   width: 1336px;
   margin: 0 auto;
@@ -264,6 +450,12 @@ header .index_telephone img {
   color: rgba(255, 255, 255, 0.7);
   padding-bottom: 144px;
 }
+@media (min-width: 700px) {
+  .about_company_wrapper .about_company {
+    flex-direction: column;
+    width: 700px;
+  }
+}
 .about_company_wrapper .about_company .about_company_text {
   background-color: #4169C1;
   padding: 70px 70px 49px 70px;
@@ -274,14 +466,22 @@ header .index_telephone img {
   background-position: 100% 100%;
   background-size: 100% auto;
 }
+@media (min-width: 700px) {
+  .about_company_wrapper .about_company .about_company_text {
+    width: 620px;
+  }
+}
 .about_company_wrapper .about_company .about_company_text h3 {
   margin-bottom: 10px;
   color: white;
   font-size: 22px;
+  font-weight: 500;
+  line-height: 27px;
 }
 .about_company_wrapper .about_company .about_company_text p {
   margin-bottom: 10px;
   font-size: 16px;
+  line-height: 25px;
 }
 .about_company_wrapper .about_company .about_company_text .about_company_text_images img {
   display: inline-block;
@@ -291,6 +491,11 @@ header .index_telephone img {
   position: relative;
   z-index: 1;
   left: -136px;
+}
+@media (min-width: 700px) {
+  .about_company_wrapper .about_company .about_company_photo {
+    left: 0;
+  }
 }
 .about_company_wrapper .about_company .about_company_photo img {
   display: block;
@@ -311,6 +516,8 @@ header .index_telephone img {
 }
 .contacts_our_company h2 {
   margin-bottom: 20px;
+  font-size: 35px;
+  font-weight: 500;
 }
 .contacts_our_company .contacts_our_company_telephone {
   display: flex;
@@ -319,9 +526,13 @@ header .index_telephone img {
   display: block;
   margin-bottom: 18px;
   margin-left: 20px;
+  opacity: 0.7;
 }
 .contacts_our_company .contacts_our_company_telephone p {
   display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
 }
 .contacts_our_company .contacts_our_company_email {
   display: flex;
@@ -330,6 +541,12 @@ header .index_telephone img {
   display: block;
   margin-bottom: 18px;
   margin-left: 36px;
+  opacity: 0.7;
+}
+.contacts_our_company .contacts_our_company_email p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
 }
 .contacts_our_company .contacts_our_company_adress {
   display: flex;
@@ -338,9 +555,18 @@ header .index_telephone img {
   margin-bottom: 28px;
   margin-left: 36px;
   width: 156px;
+  opacity: 0.7;
+}
+.contacts_our_company .contacts_our_company_adress p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
 }
 .contacts_our_company .contacts_our_company_name_svg p {
   margin-bottom: 27px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
 }
 .contacts_our_company .contacts_our_company_name_svg img {
   display: inline-block;
@@ -363,11 +589,18 @@ header .index_telephone img {
 .ask_question_wrapper input[type=text] {
   width: 278px;
   height: 45px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 1px solid #E7ECF3;
+  background-color: #EEF2F9;
 }
 .ask_question_wrapper h2 {
   width: 100%;
   padding-top: 40px;
   padding-left: 65px;
+  font-size: 22px;
+  font-weight: 500;
 }
 .ask_question_wrapper input[type=submit] {
   display: block;
@@ -375,13 +608,28 @@ header .index_telephone img {
 .ask_question_wrapper .ask_question_wrapper_flex_item1 {
   width: 278px;
 }
+.ask_question_wrapper .ask_question_wrapper_flex_item1 p {
+  line-height: 18px;
+  margin-top: 10px;
+}
+.ask_question_wrapper .ask_question_wrapper_flex_item1 .margin_none {
+  margin: 0;
+}
 .ask_question_wrapper .ask_question_wrapper_flex_item2 {
   width: 278px;
 }
+.ask_question_wrapper .ask_question_wrapper_flex_item2 p {
+  line-height: 18px;
+}
 .ask_question_wrapper .ask_question_wrapper_flex_item2 textarea {
   width: 100%;
-  height: 185px;
+  height: 192px;
   resize: none;
+  padding: 14px 14px 10px 14px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 1px solid #E7ECF3;
+  background-color: #EEF2F9;
 }
 
 .ask_question_footer_flex {
@@ -399,6 +647,21 @@ header .index_telephone img {
   display: inline-block;
   margin-left: -15px;
 }
+.ask_question_footer_flex .footer_flex1 .check_input {
+  appearance: none;
+  position: absolute;
+}
+.ask_question_footer_flex .footer_flex1 .custom_checkbox {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  background-color: #EEF2F9;
+  border-radius: 2px;
+  margin-left: -1.2em;
+}
+.ask_question_footer_flex .footer_flex1 label {
+  padding-left: 2.6px;
+}
 .ask_question_footer_flex .footer_flex2 {
   width: 278px;
   height: 34px;
@@ -408,6 +671,22 @@ header .index_telephone img {
 .ask_question_footer_flex .footer_flex2 input[type=submit] {
   width: 100%;
   height: 50px;
+  background: #FD6612;
+  border-radius: 23.5px;
+  border: none;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.check_input:checked + .custom_checkbox {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  background-color: #4169C1;
 }
 
 footer {
@@ -424,6 +703,17 @@ footer .container .all_rights {
 }
 footer .container .dev_site {
   color: white;
+}
+footer .container .dev_site::before {
+  content: "";
+  display: inline-block;
+  background-image: url(/svg/Group.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  line-height: 20px;
+  margin-right: 8px;
+  height: 16px;
+  width: 12px;
 }
 
 /*# sourceMappingURL=style.css.map */

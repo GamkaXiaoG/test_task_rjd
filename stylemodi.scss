@@ -8,38 +8,76 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: content-box;
     @include font_family();
+}
+
+body {
+    box-sizing: content-box;
 }
 
 .container {
     width: 1200px;
     margin: 0 auto;
+    @media (max-width: 700px) {
+        width: 700px;
+        margin: 0 auto;
+    }
 }
 
 header {
-    max-height: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 700px) {
+        min-height: 90px;
+    }
     .index_logo {
         display: flex;
         align-items: center;
         .index_logo_text {
             padding-left: 10px;
+            span {
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 23px;
+            }
+            p {
+                font-size: 15px;
+                font-weight: 300;
+                line-height: 17px;
+            }
         }
     }
     .index_nav {
         list-style: none;
-        width: 540px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        text-transform: uppercase;
+        @media (max-width: 700px) {
+            display: none;
+        }
+        li {
+            padding: 37px 17px 37px 18px;
+            font-size: 12px;
+            letter-spacing: .05em;
+            &:nth-child(4) {
+                color: #4169C1;
+            }
+            &:hover{
+                background-color: #4169C1;
+                color: #fff;
+            }
+            
+        }
     }
     .index_telephone {
         display: flex;
-        align-items: 50% 20px;
         img {
             padding-right: 10px;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 500;
         }
     }
 }
@@ -49,39 +87,63 @@ header {
     background-position: 50% -70px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    @media (max-width: 700px) {
+        background-size: cover;
+    }
     .bg_wrapper_services_info {
         color: white;
-        width: 846px;
         text-align: center;
         margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         h1 {
             font-size: 44px;
             line-height: 55px;
+            font-weight: 700;
             margin-bottom: 10px;
+            max-width: 308px;
+            @media (max-width: 700px) {
+                font-size: 38px;
+                max-width: 578px;
+            }
         }
         p {
-            width: 585px;
             text-align: center;
             font-size: 18px;
-            padding-left: 130px;
+            line-height: 28px;
+            font-weight: 400;
+            max-width: 585px;
+            @media (max-width: 700px) {
+                max-width: 460px;
+            }
         }
     }
     .bg_wrapper_application_info {
         background-image: url(/png/Rectangle\ 153.png);
         background-repeat: no-repeat;
         background-position: 50% 50%;
-        align-self: center;
-        width: 1200px;
-        min-height: 202px;
+        // width: 1200px;
+        // max-height: 202px;
         margin-top: 39px;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
+        @media (max-width: 700px) {
+            background-size: cover;
+            padding: 38px 60px 53px 58px;
+            width: 500px;
+        }
         p {
-            padding: 34px 0px 25px 73px;
-            font-weight: 500px;
+            // padding: 34px 0px 25px 73px;
             font-size: 22px;
+            font-weight: 500 !important;
+            @media (max-width: 700px) {
+                // padding: 38px 0px 14px 58px;
+                max-width: 300px;
+            }
             span {
                 color: rgba(65, 105, 193, 1);
+                font-weight: 500 !important;
             }
         }
         .name {
@@ -89,35 +151,70 @@ header {
             width: 235px;
             height: 45px;
             margin-right: 20px;
+            @media (max-width: 700px) {
+                width: 100%;
+            }
         }
         .email {
             display: block;
             width: 235px;
             height: 45px;
+            @media (max-width: 700px) {
+                width: 100%;
+            }
         }
         .telephone {
             display: block;
             width: 278px;
             height: 45px;
             margin-right: 20px;
+            @media (max-width: 700px) {
+                width: 100%;
+            }
         }
     }
 }
 
 .form_flex {
-    padding-left: 73px;
     display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    // padding-bottom: 50px;
+    // padding: 0px 72px 50px 72px;
+    @media (max-width: 700px) {
+        flex-direction: column;
+    }
+    label {
+        @media (max-width: 700px) {
+            margin-top: 10px;
+        }
+    }
     button {
         width: 235px;
-        height: 50px;
+        height: 46px;
         align-self: end;
         border-radius: 23px;
         margin-left: 31px;
+        background-color: #FD6612;
+        border: none;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 0.04em;
+        @media (max-width: 700px) {
+            width: 100%;
+            margin-top: 16px;
+        }
+    }
+    input[type="text"] {
+        padding-left: 15px;
+        box-sizing: border-box;
     }
 }
 
 .bg_wrapper .container {
-    padding-top: 109px;
+    padding-top: 76px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -127,11 +224,33 @@ header {
 .geography_work_info {
     display: flex;
     align-items: center;
+    margin-bottom: 60px;
+    @media (max-width: 700px) {
+        flex-direction: column;
+        justify-content: center;
+    }
     .geography_work_text {
+        @media (max-width: 700px) {
+            width: 570px;
+        }
+        h2 {
+            font-weight: 500;
+            font-size: 35px;
+            padding-bottom: 20px;
+        }
+        .geography_work_text_ooo {
+            font-size: 22px;
+            line-height: 33px;
+            padding-right: 25px;
+            margin-bottom: 20px;
+        }
         .geography_work_text_about {
             word-break: break-word;
+            font-size: 16px;
+            line-height: 25px;
         }
     }
+
     .russia_country {
         width: 724px;
         height: 455px;
@@ -143,14 +262,22 @@ header {
     .container {
         display: flex;
         justify-content: center;
+        align-items: center;
         padding-bottom: 51px;
+        @media (max-width: 700px) {
+            flex-direction: column;
+        }
     }
     h2 {
         text-align: center;
         padding-top: 70px;
         padding-bottom: 38px;
+        font-size: 35px;
+        font-weight: 500;
     }
     .our_portfolio_image {
+        @media (max-width: 700px) {
+        }
         img {
             display: block;
         }
@@ -173,31 +300,47 @@ header {
         text-transform: uppercase;
         border: none;
         margin-top: 29px;
+        letter-spacing: 0.04em
     }
     .our_portfolio_content_repair {
         h3 {
             margin-bottom: 10px;
+            font-size: 22px;
+            font-weight: 500;
         }
         p {
             margin-bottom: 29px;
             width: 480px;
             word-break: break-word;
             line-height: 25px;
+            color: rgba(255, 2555, 255, .7);
         }
     }
     .our_portfolio_content_works {
         p {
             margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 500;
         }
     }
     .our_portfolio_content_works_catalog {
         display: flex;
         flex-wrap: wrap;
         li {
-            width: 250px;
+            width: 268px;
             list-style: none;
             margin-right: 57px;
             margin-bottom: 17px;
+            // position: relative;
+            &::before {
+                content: "";
+                display: inline-block;
+                background-image: url(/svg/Check.svg);
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                width: 24px;
+                height: 14px;
+            }
         }
     }
 }
@@ -215,10 +358,24 @@ header {
     }
     .catalog_features_item {
         width: 317px;
+        @media (min-width: 700px) {
+            width: 268px;
+        }
         padding-left: 80px;
         margin-bottom: 20px;
         line-height: 21px;
         font-size: 14px;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 11px;
+            left: 9px;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(65, 105, 193, 0.2);
+            border-radius: 50%;
+        }
         strong {
             font-size: 22px;
             line-height: 27px;
@@ -228,12 +385,13 @@ header {
         }
         p {
             padding-right: 40px;
+            line-height: 21px;
         }
     }
     .item1 {
         background-image: url(/svg/Money.svg);
         background-repeat: no-repeat;
-        background-position: 0 -10px;
+        background-position: 0 -1px;
     }
     .item2 {
         background-image: url(/svg/Lightbulb.svg);
@@ -260,6 +418,9 @@ header {
 .about_company_wrapper {
     background-color: #F4F8FF;
     padding-left: 136px;
+    @media (min-width: 700px) {
+        padding: 0;
+    }
     .container {
         width: 1200px + 136px;
         margin: 0 auto;
@@ -273,6 +434,10 @@ header {
     .about_company {
         display: flex;
         align-items: center;
+        @media (min-width: 700px) {
+            flex-direction: column;
+            width: 700px;
+        }
         color: rgba(255, 255, 255, .7);
         padding-bottom: 144px;
         .about_company_text {
@@ -284,14 +449,20 @@ header {
             background-repeat: no-repeat;
             background-position: 100% 100%;
             background-size: 100% auto;
+            @media (min-width: 700px) {
+                width: 620px;
+            }
             h3 {
                 margin-bottom: 10px;
                 color: white;
                 font-size: 22px;
+                font-weight: 500;
+                line-height: 27px;
             }
             p {
                 margin-bottom: 10px;
                 font-size: 16px;
+                line-height: 25px;
             }
             .about_company_text_images img {
                 display: inline-block;
@@ -300,6 +471,9 @@ header {
         }
         .about_company_photo{
           position: relative;
+          @media (min-width: 700px) {
+              left: 0;
+          }
           z-index: 1;
           left: -136px;
             img {
@@ -324,6 +498,8 @@ header {
     color: white;
     h2 {
         margin-bottom: 20px;
+        font-size: 35px;
+        font-weight: 500;
     }
     .contacts_our_company_telephone {
         display: flex;
@@ -332,10 +508,14 @@ header {
                 display: block;
                 margin-bottom: 18px;
                 margin-left: 20px;
+                opacity: .7;
             }
         }
         p {
             display: inline-block;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 22px;
         }
     }
     .contacts_our_company_email {
@@ -344,6 +524,12 @@ header {
             display: block;
             margin-bottom: 18px;
             margin-left: 36px;
+            opacity: .7;
+        }
+        p {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 22px;
         }
     }
     .contacts_our_company_adress {
@@ -352,12 +538,20 @@ header {
             margin-bottom: 28px;
             margin-left: 36px;
             width: 156px;
-            // font-size: 14px;
+            opacity: .7;
+        }
+        p {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 22px;
         }
     }
     .contacts_our_company_name_svg {
         p {
             margin-bottom: 27px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 22px;
         }
         img {
             display: inline-block;
@@ -381,24 +575,46 @@ header {
     input[type="text"] {
         width: 278px;
         height: 45px;
+        padding-left: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        border: 1px solid #E7ECF3;
+        background-color: #EEF2F9;
     }
     h2 {
         width: 100%;
         padding-top: 40px;
         padding-left: 65px;
+        font-size: 22px;
+        font-weight: 500;
     }
     input[type="submit"] {
         display: block;
     }
     .ask_question_wrapper_flex_item1 {
         width: 278px;
+        p {
+            line-height: 18px;
+            margin-top: 10px;
+        }
+        .margin_none {
+            margin: 0;
+        }
     }
     .ask_question_wrapper_flex_item2 {
         width: 278px;
+        p {
+            line-height: 18px;
+        }
         textarea {
             width: 100%;
-            height: 185px;
+            height: 192px;
             resize: none;
+            padding: 14px 14px 10px 14px;
+            box-sizing: border-box;
+            font-size: 14px;
+            border: 1px solid #E7ECF3;
+            background-color: #EEF2F9;
         }
     }
 }
@@ -416,6 +632,21 @@ header {
             display: inline-block;
             margin-left: -15px;
         }
+        .check_input {
+            appearance: none;
+            position: absolute;
+        }
+        .custom_checkbox {
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            background-color: #EEF2F9;
+            border-radius: 2px;
+            margin-left: -1.2em;
+        }
+        label {
+            padding-left: 2.6px;
+        }
     }
     .footer_flex2 {
         width: 278px;
@@ -425,8 +656,24 @@ header {
         input[type="submit"] {
             width: 100%;
             height: 50px;
+            background: #FD6612;
+            border-radius: 23.5px;
+            border: none;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
         }
     }
+}
+
+.check_input:checked + .custom_checkbox {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background-color: #4169C1;
 }
 
 footer {
@@ -442,6 +689,18 @@ footer {
         }
         .dev_site {
             color: white;
+            &::before {
+                content: "";
+                display: inline-block;
+                background-image: url(/svg/Group.svg);
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                line-height: 20px;
+                margin-right: 8px;
+                height: 16px;
+                width: 12px;
+            }
+            
         }
     }
 }

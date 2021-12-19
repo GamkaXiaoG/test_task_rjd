@@ -33,8 +33,8 @@
     <div class="bg_wrapper">
         <div class="container">
             <div class="bg_wrapper_services_info">
-                <h1>Услуги по строительству <br> и ремонту железнодорожных путей</h1>
-                <p>Компания проводит строительные и ремонтные работы на <br> территории более чем 20 субъектов Российской Федерации</p>
+                <h1>Услуги по строительству<br> и ремонту железнодорожных путей</h1>
+                <p>Компания проводит строительные и ремонтные работы на территории более чем 20 субъектов Российской Федерации</p>
             </div>
             <div class="bg_wrapper_application_info">
                 <p>Оставьте заявку на <span>бесплатную</span> консультацию</p>
@@ -59,7 +59,7 @@
         <section class="geography_work_info">
             <div class="geography_work_text">
                 <h2>География работ</h2>
-                <p>ООО «Путьремстрой» реализует проекты на всей территории Российской Федерации.</p>
+                <p class="geography_work_text_ooo">ООО «Путьремстрой» реализует проекты на всей территории Российской Федерации.</p>
                 <p class="geography_work_text_about">
                     Компания проводит строительные и ремонтные работы на территории более чем 20 субъектов Российской Федерации, постоянно расширяя географию присутствия на всю территорию страны. Работа компании ведется как в крупных городах областного значения, так и в небольших населенных пунктах. Заказчиками могут быть региональные или федеральные компании, крупные компании из разных сфер деятельности,
                     заинтересованные в осуществлении транспортных проектов.
@@ -178,7 +178,7 @@
                 <h2>Остались вопросы?</h2>
                 <div class="ask_question_wrapper_flex_item1">
                     <label>
-                        <p>Имя</p>
+                        <p class="margin_none">Имя</p>
                         <input type="text" placeholder="Михаил">
                     </label>
                     <label>
@@ -197,12 +197,15 @@
                 </div>
                 <div class="ask_question_footer_flex">
                     <div class="footer_flex1">
-                            <input type="checkbox" name="remebmerme" id="remember">
-                            <label for="remember">Даю свое согласие 
-                                <br> c <span>политикой конфиденциальности</span> </label>    
+                        <label for="remember">
+                            <input type="checkbox" name="remebmerme" id="remember" class="check_input">
+                            <span class="custom_checkbox"></span>
+                            Даю свое согласие 
+                                <br> c <a href="#">политикой конфиденциальности</a> 
+                            </label>    
                     </div>
                     <div class="footer_flex2">
-                        <input type="submit">
+                        <input type="submit" value="Отправить">
                     </div>
                 </div>
             </form>
